@@ -16,7 +16,7 @@ i=1
 while [ $i -le $N ]
 do
 	HADOOP_SLAVE="$HOST_PREFIX"-slave-$i
-	docker run --name $HADOOP_SLAVE -h $HADOOP_SLAVE --net=$NETWORK_NAME -itd "$IMG_NAME" -v /opt/spark-apps:/opt/spark-apps -v /opt/spark-data:/opt/spark-data
+	docker run --name $HADOOP_SLAVE -v /opt/spark-apps:/opt/spark-apps -v /opt/spark-data:/opt/spark-data -h $HADOOP_SLAVE --net=$NETWORK_NAME -itd "$IMG_NAME" 
 	i=$(( $i + 1 ))
 done
 
