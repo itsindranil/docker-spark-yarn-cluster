@@ -9,14 +9,19 @@ start :
 	@echo " ---- START ---- "
 	@chmod +x startHadoopCluster.sh
 	@./startHadoopCluster.sh
+restart :
+	@echo " ---- RE-START ---- "
+	@chmod +x re-start.sh
+	@./re-start.sh
 stop :
-	@echo " ---- STOP ---- "
+	@echo " ---- STOP/ REMOVE ---- "
 	@chmod +x stop.sh
 	@./stop.sh
 
 connect :
 	@echo " ---- MASTER NODE ---- "
-	@docker exec -it cluster-master bash
+	@chmod +x connect.sh
+	@./connect.sh
 
 master-ip : 
 	@echo " ---- MASTER NODE IP ---- "
